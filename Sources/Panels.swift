@@ -100,6 +100,7 @@ extension Panels {
         if !keyboard {
             panel?.headerHeight.constant += isExpanded ? -(UIApplication.safeAreaBottom()) : UIApplication.safeAreaBottom()
         }
+        print(panel?.headerHeight.constant)
         isExpanded ? self.delegate?.panelDidOpen() : self.delegate?.panelDidCollapse()
         containerView?.animateLayoutBounce(completion: completion) ?? completion?()
     }

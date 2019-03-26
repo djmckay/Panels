@@ -53,7 +53,7 @@ public struct PanelConfiguration {
                 visibleArea: CGFloat = 64.0) {
         self.panelSize = size
         self.panelMargin = margin
-        self.panelVisibleArea = visibleArea
+        self.panelVisibleArea = visibleArea 
     }
 
     internal func size(for view: UIView) -> CGFloat {
@@ -64,6 +64,7 @@ public struct PanelConfiguration {
 
     internal func visibleArea() -> CGFloat {
         let visible = self.panelVisibleArea + UIApplication.safeAreaBottom() + (2 * panelMargin)
+        print(visible)
         return visible
     }
 }
