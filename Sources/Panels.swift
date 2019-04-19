@@ -31,8 +31,9 @@ public class Panels {
     public func show(panel: Panelable & UIViewController,
                      config: PanelConfiguration = PanelConfiguration(),
                      view: UIView? = nil) {
-
-        assert(self.panel == nil, "You are trying to push a panel without dismiss the previous one.")
+        if self.panel != nil {
+            return
+        }
         self.configuration = config
         self.containerView = view ?? parentViewController?.view
         self.panel = panel
